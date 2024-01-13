@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            background-color: rgb(14, 14, 14);
+            color: white;
+        }
+
+        .question-container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-weight: 900;
+            text-transform: uppercase;
+
+            >span {
+                color: #a81b1b;
+            }
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            height: 50px;
+            width: 100px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            /* Green background color */
+            color: white;
+            /* White text color */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            /* Smooth transition on hover */
+
+            /* Shadow effect for a 3D look */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                background-color: #45a049;
+                /* Darker green on hover */
+            }
+        }
+
+
+        .btn1 {
+            margin-right: 177px;
+        }
+
+        .btn2 {
+            position: absolute;
+            margin-left: -60px;
+            transition: all .3s linear;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="question-container">
+        <h1>Are you <span>gay</span>??</h1>
+        <button class="btn1">Yes</button>
+        <button class="btn2">No</button>
+    </div>
+
+    <script>
+        const btn2 = document.querySelector('.btn2');
+        const btn1 = document.querySelector('.btn1');
+
+        btn2.addEventListener('mouseover', function () {
+            // console.log('Mouse over the component');
+
+            // Calculate random positions within the body
+            const bodyWidth = document.body.clientWidth;
+            const bodyHeight = document.body.clientHeight;
+
+            const randomLeft = Math.random() * (bodyWidth - 100);
+            const randomTop = Math.random() * (bodyHeight - 100);
+
+            // console.log(randomLeft,randomTop)
+            // // Apply the random values
+            btn2.style.left = randomLeft + 'px';
+            btn2.style.top = randomTop + 'px';
+        });
+        btn1.addEventListener('click', () => {
+            alert('Why are you gay')
+        })
+        btn2.addEventListener('click', () => {
+            alert('Did you wash your ass today')
+        })
+    </script>
+
+</body>
+
+</html>
